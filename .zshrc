@@ -47,3 +47,4 @@ alias vpn-status='sudo wg show'
 
 clear
 
+eval "$(/home/ucup/.local/bin/mise activate zsh)"
