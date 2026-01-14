@@ -1,83 +1,83 @@
 * {
-	/* `otf-font-awesome` is required to be installed for icons */
-	font-family: "GeistMono Nerd Font";
-	/*font-family: "D2CodingLigature Nerd Mono";*/
-	font-size: 12px;
-	min-height: 0;
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: "GeistMono Nerd Font";
+  /*font-family: "D2CodingLigature Nerd Mono";*/
+  font-size: 12px;
+  min-height: 0;
 }
 
 window#waybar {
-	background: transparent;
-	/*    background-color: rgba(43, 48, 59, 0.5); */
-	/*    border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
-	color: #ffffff;
-	transition-property: background-color;
-	transition-duration: 0.5s;
+  background: transparent;
+  /*    background-color: rgba(43, 48, 59, 0.5); */
+  /*    border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
+  color: #ffffff;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 
 window#waybar.hidden {
-	opacity: 0.2;
+  opacity: 0.2;
 }
 
 #waybar.empty #window {
-	background-color: transparent;
+  background-color: transparent;
 }
 
 #workspaces {
 }
 
 #window {
-	margin: 2;
-	padding-left: 8;
-	padding-right: 8;
-	background-color: rgba(0, 0, 0, 0.3);
-	font-size: 14px;
-	font-weight: bold;
+  margin: 2;
+  padding-left: 8;
+  padding-right: 8;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  font-weight: bold;
 }
 
 button {
-	/* Use box-shadow instead of border so the text isn't offset */
-	box-shadow: inset 0 -3px transparent;
-	/* Avoid rounded borders under each button name */
-	border: none;
-	border-radius: 0;
+  /* Use box-shadow instead of border so the text isn't offset */
+  box-shadow: inset 0 -3px transparent;
+  /* Avoid rounded borders under each button name */
+  border: none;
+  border-radius: 0;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
-	background: inherit;
-	border-top: 2px solid #c9545d;
+  background: inherit;
+  border-top: 2px solid #c9545d;
 }
 
 #workspaces button {
-	padding: 0 4px;
-	/*    background-color: rgba(0,0,0,0.3); */
+  padding: 0 4px;
+  /*    background-color: rgba(0,0,0,0.3); */
 }
 
 #workspaces button:hover {
 }
 
 #workspaces button.focused {
-	/*    box-shadow: inset 0 -2px #c9545d; */
-	background-color: rgba(0, 0, 0, 0.3);
-	color: #c9545d;
-	border-top: 2px solid #c9545d;
+  /*    box-shadow: inset 0 -2px #c9545d; */
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #c9545d;
+  border-top: 2px solid #c9545d;
 }
 
 #workspaces button.active {
-	/*    box-shadow: inset 0 -2px #c9545d; */
-	background-color: rgba(0, 0, 0, 0.3);
-	color: #c9545d;
-	border-top: 2px solid #c9545d;
+  /*    box-shadow: inset 0 -2px #c9545d; */
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #c9545d;
+  border-top: 2px solid #c9545d;
 }
 
 #workspaces button.urgent {
-	background-color: #eb4d4b;
+  background-color: #eb4d4b;
 }
 
 #mode {
-	background-color: #64727d;
-	border-bottom: 3px solid #ffffff;
+  background-color: #64727d;
+  border-bottom: 3px solid #ffffff;
 }
 
 #clock,
@@ -97,133 +97,135 @@ button:hover {
 #scratchpad,
 #mpd,
 #custom-prayer-time {
-	margin: 2px;
-	padding-left: 4px;
-	padding-right: 4px;
-	/* background-color: rgba(0, 0, 0, 0.3); */
-	color: #ffffff;
+  margin: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  color: #ffffff;
 }
-
 
 #custom-prayer-time {
-	margin: 0px;
-	margin-left: 4px;
-	background-color: rgba(0, 0, 0, 0.3);
-	border-radius: 8px;
-	padding: 0px 6px;
+  margin: 0px;
+  margin-left: 4px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 0px 6px;
 }
 
-
 #custom-prayer-time.alert {
-	color: #ea9a97;
-	font-weight: bold;
+  color: #ea9a97;
+  font-weight: bold;
 }
 
 .modules-left {
-	/* background-color: rgba(0, 0, 0, 0.3); */
-	padding: 0 0px;
-	border-radius: 8px;
-	margin-top: 2px;
-	margin-left: 4px;
-	/* gap: 4px; */
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  padding: 0 0px;
+  border-radius: 8px;
+  margin-top: 2px;
+  margin-left: 4px;
+  /* gap: 4px; */
 }
 
 .modules-left #workspaces {
-	background-color: rgba(0, 0, 0, 0.3);
-	border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
 }
 
 .modules-center {
-	background-color: rgba(0, 0, 0, 0.3);
-	padding: 0px;
-	border-radius: 8px;
-	margin-top: 2px;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0px;
+  border-radius: 8px;
+  margin-top: 2px;
 }
 
 .modules-right {
-	background-color: rgba(0, 0, 0, 0.3);
-	padding: 0 0px;
-	border-radius: 8px;
-	margin-top: 2px;
-	margin-right: 4px;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0 0px;
+  border-radius: 8px;
+  margin-top: 2px;
+  margin-right: 4px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
-	margin-left: 0;
+  margin-left: 0;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
-	margin-right: 0;
+  margin-right: 0;
 }
 
 #clock {
-	font-size: 14px;
-	font-weight: bold;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 #battery icon {
-	color: red;
+  color: red;
 }
 
 #battery.charging,
 #battery.plugged {
-	color: #ffffff;
-	background-color: #26a65b;
+  color: #ffffff;
+  background-color: #26a65b;
 }
 
 @keyframes blink {
-	to {
-		background-color: #ffffff;
-		color: #000000;
-	}
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
 }
 
 #battery.warning:not(.charging) {
-	background-color: #f53c3c;
-	color: #ffffff;
-	animation-name: blink;
-	animation-duration: 0.5s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #battery.critical:not(.charging) {
-	background-color: #f53c3c;
-	color: #ffffff;
-	animation-name: blink;
-	animation-duration: 0.5s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 label:focus {
-	background-color: #000000;
+  background-color: #000000;
 }
 
 #network.disconnected {
-	background-color: #f53c3c;
+  background-color: #f53c3c;
+}
+
+#temperature.warning {
+  background-color: #f39c12;
 }
 
 #temperature.critical {
-	background-color: #eb4d4b;
+  background-color: #eb4d4b;
 }
 
 #idle_inhibitor.activated {
-	background-color: #ecf0f1;
-	color: #2d3436;
+  background-color: #ecf0f1;
+  color: #2d3436;
 }
 
 #tray > .passive {
-	-gtk-icon-effect: dim;
+  -gtk-icon-effect: dim;
 }
 
 #tray > .needs-attention {
-	-gtk-icon-effect: highlight;
-	background-color: #eb4d4b;
+  -gtk-icon-effect: highlight;
+  background-color: #eb4d4b;
 }
 
 /*
