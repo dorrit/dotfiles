@@ -10,8 +10,8 @@ sudo pacman -S --noconfirm \
 	firefox \
 	tmux \
 	btop \
-	alacritty \
 	zoxide \
+	eza \
 	thefuck \
 	atuin \
 	fastfetch \
@@ -27,14 +27,14 @@ sudo pacman -S --noconfirm \
 
 echo ">>> Installing Rust and Spotify Player..."
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-cargo install spotify_player --features sixel
+cargo install spotify_player --features image
 
 echo ">>> Installing AUR helper (yay)..."
 if ! command -v yay &>/dev/null; then
-  git clone https://aur.archlinux.org/yay.git ~/yay && cd ~/yay
-  makepkg -si --noconfirm
-  cd ~
-  rm -rf ~/yay
+	git clone https://aur.archlinux.org/yay.git ~/yay && cd ~/yay
+	makepkg -si --noconfirm
+	cd ~
+	rm -rf ~/yay
 fi
 
 echo ">>> Installing base Hyprland packages..."
@@ -67,4 +67,4 @@ yay -S --noconfirm \
 	syncthingtray \
 	efm-langserver
 
-echo ">>> Done. Now load the config and reboot!" 
+echo ">>> Done. Now load the config and reboot!"
