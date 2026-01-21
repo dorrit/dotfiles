@@ -25,10 +25,6 @@ sudo pacman -S --noconfirm \
 	slurp \
 	jq
 
-echo ">>> Installing Rust and Spotify Player..."
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-cargo install spotify_player --features image
-
 echo ">>> Installing AUR helper (yay)..."
 if ! command -v yay &>/dev/null; then
 	git clone https://aur.archlinux.org/yay.git ~/yay && cd ~/yay
