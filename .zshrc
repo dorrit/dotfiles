@@ -47,4 +47,16 @@ alias vpn-status='sudo wg show'
 
 clear
 
-eval "$(/home/ucup/.local/bin/mise activate zsh)"
+eval "$($HOME/.local/bin/mise activate zsh)"
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# bun completions
+[ -s "/home/dorrit/.bun/_bun" ] && source "/home/dorrit/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$HOME/.npm-global/bin:$PATH"
+
+# OpenClaw Completion
+source "/home/dorrit/.openclaw/completions/openclaw.zsh"
