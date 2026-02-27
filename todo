@@ -1,4 +1,20 @@
-- lockscreen
-- Notification
-- wallpaper
-- kdeconnect
+# Completed ✓
+- [x] lockscreen (hyprlock configured and working)
+- [x] Notification (dunst configured with custom scripts)
+- [x] wallpaper (hyprpaper configured with preload and per-monitor setup)
+- [x] kdeconnect (installed and autostart enabled)
+- [x] spotify-player (installed via cargo with image feature)
+- [x] dual monitor setup (workspace allocation optimized)
+
+# Configuration Improvements Done
+- [x] Fixed Notion autostart command
+- [x] Replaced foot with kitty in waybar config
+- [x] Removed unused MPD config
+- [x] Enhanced setup.sh with error handling and missing packages
+- [x] Created WireGuard VPN documentation
+
+# In Progress / Todo
+- [ ] Configure spotify-player (needs Spotify Premium auth on first run)
+- [ ] Enable syncthing service if needed for file sync
+- [ ] Add more wallpapers to ~/wall/ directory
+- [ ] Setup mpd/ncmpcpp if music server needed (currently commented out)

@@ -60,3 +60,6 @@ export PATH="$HOME/.npm-global/bin:$PATH"
 
 # OpenClaw Completion
 source "/home/dorrit/.openclaw/completions/openclaw.zsh"
+
+# opencode
+export PATH=/home/dorrit/.opencode/bin:$PATH
