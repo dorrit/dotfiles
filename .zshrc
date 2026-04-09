@@ -25,9 +25,7 @@ bindkey '^[OA'  atuin-up-search
 bindkey '^[[B'  atuin-down-search
 bindkey '^[OB'  atuin-down-search
 
-# ctrl+n / ctrl+p
-bindkey '^N'    atuin-down-search
-bindkey '^P'    atuin-up-search
+# ctrl+n / ctrl+p bindkey '^N'    atuin-down-search bindkey '^P'    atuin-up-search
 
 # zoxide
 eval "$(zoxide init zsh)"
@@ -40,10 +38,12 @@ alias ls="eza --icons=always"
 eval $(thefuck --alias)
 
 # vpn
-alias vpn-up='sudo wg-quick up ucup-NL-FREE-49'
-alias vpn-down='sudo wg-quick down ucup-NL-FREE-49'
+alias vpn-up='sudo wg-quick up germany'
+alias vpn-down='sudo wg-quick down germany' 
 alias vpn-status='sudo wg show'
 
+# alias ssh
+alias ssh-server='ssh -i ~/.ssh/server'
 
 clear
 
