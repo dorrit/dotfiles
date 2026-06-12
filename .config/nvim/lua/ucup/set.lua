@@ -36,3 +36,10 @@ vim.opt.colorcolumn = "80"
 
 vim.opt.wrap = false
 vim.cmd.set("ignorecase smartcase")
+
+-- Filetype detection for Svelte
+vim.filetype.add({
+  extension = {
+    svelte = "svelte",
+  },
+})
