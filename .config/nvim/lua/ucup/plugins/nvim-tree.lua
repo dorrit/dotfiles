@@ -36,19 +36,19 @@ return {
 		require("nvim-tree").setup({
 			diagnostics = { enable = true },
 			view = {
-				width = 30,
+				width = 44,
 				side = "left",
 				signcolumn = "yes",
 				float = {
-					enable = true,
-					open_win_config = {
-						relative = "editor",
-						border = "rounded", -- Or any other border style
-						width = 44, -- Adjust as needed
-						height = 50, -- Adjust as needed
-						row = 8, -- Adjust vertical position
-						col = 10, -- Adjust horizontal position
-					},
+					-- enable = true,
+					-- open_win_config = {
+					-- 	relative = "editor",
+					-- 	border = "rounded", -- Or any other border style
+					-- 	width = 44, -- Adjust as needed
+					-- 	height = 50, -- Adjust as needed
+					-- 	row = 8, -- Adjust vertical position
+					-- 	col = 10, -- Adjust horizontal position
+					-- },
 				},
 			},
 			git = {

@@ -50,6 +50,7 @@ clear
 eval "$($HOME/.local/bin/mise activate zsh)"
 export PATH="$HOME/.cargo/bin:$PATH"
 
+
 # bun completions
 [ -s "/home/dorrit/.bun/_bun" ] && source "/home/dorrit/.bun/_bun"
 
@@ -63,3 +64,5 @@ source "/home/dorrit/.openclaw/completions/openclaw.zsh"
 
 # opencode
 export PATH=/home/dorrit/.opencode/bin:$PATH
+
+. "$HOME/.local/share/../bin/env"
