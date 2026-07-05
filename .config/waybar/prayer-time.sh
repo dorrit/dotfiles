@@ -7,7 +7,7 @@ COUNTRY="Indonesia"
 METHOD=20  # (MWL method) see https://aladhan.com/prayer-times-api#get-/timingsByCity/-date-
 
 # Get today's prayer times using AlAdhan API
-response=$(curl -s "http://api.aladhan.com/v1/timingsByCity/$DATE?city=$CITY&country=$COUNTRY&method=$METHOD")
+response=$(curl -sL "http://api.aladhan.com/v1/timingsByCity/$DATE?city=$CITY&country=$COUNTRY&method=$METHOD")
 
 # Extract times using jq (install jq if not installed)
 declare -A prayers
