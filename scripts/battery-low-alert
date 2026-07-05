@@ -1,0 +1,88 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+threshold="${BATTERY_LOW_THRESHOLD:-20}"
+critical_threshold="${BATTERY_CRITICAL_THRESHOLD:-2}"
+interval="${BATTERY_CHECK_INTERVAL:-60}"
+state_dir="${XDG_CACHE_HOME:-$HOME/.cache}/battery-low-alert"
+state_file="$state_dir/alerted"
+hibernate_state_file="$state_dir/hibernate-triggered"
+lock_file="$state_dir/lock"
+
+mkdir -p "$state_dir"
+exec 9>"$lock_file"
+flock -n 9 || exit 0
+
+find_battery() {
+  local supply
+
+  for supply in /sys/class/power_supply/BAT*; do
+    if [ -f "$supply/capacity" ] && [ -f "$supply/status" ]; then
+      printf '%s\n' "$supply"
+      return 0
+    fi
+  done
+
+  return 1
+}
+
+has_online_ac() {
+  local supply type online
+
+  for supply in /sys/class/power_supply/*; do
+    [ -f "$supply/type" ] || continue
+    [ -f "$supply/online" ] || continue
+
+    type="$(<"$supply/type")"
+    case "$type" in
+      Mains|USB|USB_C|USB_PD|USB_DCP|USB_CDP|USB_ACA)
+        online="$(<"$supply/online")"
+        [ "$online" = "1" ] && return 0
+        ;;
+    esac
+  done
+
+  return 1
+}
+
+show_alert() {
+  local capacity="$1"
+
+  zenity \
+    --warning \
+    --title="Low Battery Alert" \
+    --width=420 \
+    --height=170 \
+    --ok-label="Close" \
+    --text="Battery is low (${capacity}%).\n\nPlug in the charger to avoid losing work." \
+    >/dev/null 2>&1 || true
+}
+
+hibernate_now() {
+  systemctl hibernate
+}
+
+while true; do
+  if battery="$(find_battery)"; then
+    capacity="$(<"$battery/capacity")"
+    status="$(<"$battery/status")"
+
+    if [ "$capacity" -le "$threshold" ] && [ "$status" != "Charging" ] && [ "$status" != "Full" ] && ! has_online_ac; then
+      if [ "$capacity" -le "$critical_threshold" ] && [ ! -f "$hibernate_state_file" ]; then
+        touch "$hibernate_state_file"
+        hibernate_now
+      fi
+
+      if [ ! -f "$state_file" ]; then
+        touch "$state_file"
+        show_alert "$capacity" &
+      fi
+    else
+      rm -f "$state_file"
+      rm -f "$hibernate_state_file"
+    fi
+  fi
+
+  sleep "$interval"
+done
