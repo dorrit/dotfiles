@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+as_root() {
+  if [[ ${EUID} -eq 0 ]]; then
+    "$@"
+  else
+    sudo "$@"
+  fi
+}
+
+if [[ ${EUID} -ne 0 ]]; then
+  sudo -v
+fi
+
+if ! as_root bootctl set-oneshot windows.conf; then
+  printf '\nCould not set a systemd-boot one-shot entry.\n' >&2
+  printf 'Reboot once through the systemd-boot menu, then run hibernate-windows again.\n' >&2
+  exit 1
+fi
+
+systemctl hibernate
