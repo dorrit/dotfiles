@@ -14,4 +14,6 @@ if [[ $(playerctl -p spotify,%any,firefox,chromium,brave,mpd metadata mpris:artU
 	curl -s "$ART_FROM_SPOTIFY" --output "$TMP_COVER_PATH"
 fi
 
-cp "$TMP_TEMP_PATH" "$TMP_COVER_PATH"
+if [ -f "$TMP_TEMP_PATH" ]; then
+	cp "$TMP_TEMP_PATH" "$TMP_COVER_PATH"
+fi
