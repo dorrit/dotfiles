@@ -35,6 +35,9 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
 vim.opt.wrap = false
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldlevel = 99
 vim.cmd.set("ignorecase smartcase")
 
 -- Filetype detection for Svelte
